@@ -4,7 +4,7 @@ export default function menuLoad() {
     const h1 = document.createElement('h1');
 
     box_div.setAttribute('id', 'box');
-    h1.textContent = "Full menu avalable soon!";
+    h1.textContent = "Full menu available soon!";
     box_div.appendChild(h1);
 
     content.appendChild(box_div);
