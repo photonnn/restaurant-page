@@ -1,6 +1,7 @@
 import './style.css';
 import homeLoad from './home.js';
 import contactLoad from './contact.js';
+import menuLoad from './menu.js';
 
 function addHeader() {
     const header = document.createElement('header');
@@ -22,8 +23,29 @@ function addHeader() {
 
 function createDiv(text) {
     const div = document.createElement('div');
+    div.classList.add('btn');
     div.textContent = text;
     return div;
 }
+
+function erase() {
+    const box = document.querySelector('#box');
+    box.remove();
+}
+
 document.body.appendChild(addHeader());
-document.body.appendChild(contactLoad());
+
+const divs = [...document.querySelectorAll('.btn')];
+divs.forEach(em => (em.addEventListener('click', () => {
+    erase();
+    if (em.textContent == "Home") {
+        document.body.appendChild(homeLoad());
+    } else if (em.textContent == "Menu") {
+        document.body.appendChild(menuLoad());
+    } else {
+        document.body.appendChild(contactLoad());
+    }
+})))
+
+
+document.body.appendChild(homeLoad());
