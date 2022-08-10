@@ -1,5 +1,6 @@
 import './style.css';
 import homeLoad from './home.js';
+import contactLoad from './contact.js';
 
 function addHeader() {
     const header = document.createElement('header');
@@ -25,4 +26,4 @@ function createDiv(text) {
     return div;
 }
 document.body.appendChild(addHeader());
-document.body.appendChild(homeLoad());
+document.body.appendChild(contactLoad());
